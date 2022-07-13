@@ -13,7 +13,6 @@ dependencies {
     implementation 'io.quarkus:quarkus-amazon-lambda-http'
     implementation 'io.quarkus:quarkus-rest-client-reactive'
     implementation 'io.quarkus:quarkus-resteasy-reactive'
-    implementation 'io.quarkus:quarkus-amazon-lambda-rest'
     implementation 'io.quarkus:quarkus-arc'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
