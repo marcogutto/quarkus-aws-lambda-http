@@ -62,7 +62,21 @@ Easily start your Reactive RESTful Web Services
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
 
 
-## Upload lambda
+## Test lambda
 ```
-sam package --template-file ./build/sam.jvm.yaml --output-template-file packaged.yaml --s3-bucket forzapp-quarkus-lambda
+sam local invoke --template target/sam.jvm.yaml --event payload.json
+```
+
+## Package lambda
+```
+sam package --template-file build/sam.jvm.yaml --output-template-file packaged.yaml --s3-bucket forzapp-quarkus-lambda
+
+sam deploy --template-file packaged.yaml --capabilities CAPABILITY_IAM --stack-name stack-quarkus-http
+```
+
+## Deploy
+```
+sam deploy -t build/sam.jvm.yaml -g
+
+sam package -t build/sam.jvm.yaml --s3-bucket forzapp-quarkus-lambda
 ```
